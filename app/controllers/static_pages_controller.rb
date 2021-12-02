@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
-    # def home
-    #     render html: 'home'
-    # end
+    def home
+        @test = "testtesttest"
+    end
 
     # def help
     # end
