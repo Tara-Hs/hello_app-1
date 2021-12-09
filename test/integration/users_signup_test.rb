@@ -21,7 +21,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, params: { user: { name: "Example User",
                                          email: "user@example.com",
                                          password:              "password",
-                                         password_confirmation: "password" } }
+                                         password_confirmation: "password" }}
     end
     
     follow_redirect!
@@ -30,7 +30,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_predicate flash[:error], :nil?
     assert_equal User.last.name, "Example User"
     assert_nil User.last.password
-    assert_equal User.count, 1
+    assert is_logged_in?
   end
 
 end
